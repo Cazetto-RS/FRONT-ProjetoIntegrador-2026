@@ -1,32 +1,44 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './navbar.css';
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import "./navbar.css";
 
 export function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav className="navbar-container">
+    <header className="navbar-container">
+
+      {/* LOGO */}
       <div className="navbar-logo">
         <img src="./src/assets/LogoPointMedia.png" alt="Logo" />
         <span className="logo-text">EZ<span>.JOB</span></span>
       </div>
 
-      <div className="navbar-links">
-        <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-          Introdução
+      {/* LINKS DESKTOP */}
+      <nav className={`navbar-links ${open ? "open" : ""}`}>
+        <NavLink to="/" className="nav-link">Home</NavLink>
+        <NavLink to="/vagas-abertas" className="nav-link">Vagas</NavLink>
+        <NavLink to="/sobre" className="nav-link">Sobre</NavLink>
+
+        {/* botão mobile */}
+        <NavLink to="/login" className="nav-button mobile">
+          Entrar
         </NavLink>
-        <NavLink to="/sobre" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-          Quem Somos?
+      </nav>
+
+      {/* AÇÕES */}
+      <div className="navbar-actions">
+        <NavLink to="/login" className="nav-button desktop">
+          Entrar
         </NavLink>
-        <NavLink to="/vagas-abertas" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-          Vagas Abertas
-        </NavLink>
+
+        {/* MENU MOBILE */}
+        <button className="menu-toggle" onClick={() => setOpen(!open)}>
+          {open ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
-      <div className="navbar-user">
-        <NavLink to="/login" className={"nav-login"}>
-          Fazer login
-        </NavLink>
-      </div>
-    </nav>
+    </header>
   );
 }

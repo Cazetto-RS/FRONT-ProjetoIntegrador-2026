@@ -7,46 +7,47 @@ export function Home() {
   return (
     <div className="home-container">
 
-      <div className="home-left">
-        <h1>
-          TALENTOS<br />
-          NÃO SE<br />
-          ENCONTRAM.<br />
-          SE <span>SELECIONAM</span>.
-        </h1>
-      </div>
+      {/* Background blur */}
+      <div className="bg-blur"></div>
 
-      {/* LADO DIREITO - CONTEÚDO */}
-      <div className="home-right">
-        <p>
-          Plataforma moderna de recrutamento com foco em dados, precisão e velocidade.
-        </p>
+      <div className="home-content">
 
-        <div className="home-actions">
-          <button onClick={() => navigate("/vagas-abertas")}>
-            Ver Vagas
-          </button>
+        {/* Lado esquerdo */}
+        <div className="home-left">
+          <h1>
+            TALENTOS<br />
+            NÃO SE<br />
+            ENCONTRAM.<br />
+            SE <span>DESTACAM.</span>
+          </h1>
 
-        </div>
+          <p>
+            Conecte-se às melhores oportunidades e destaque seu talento no mercado.
+          </p>
 
-        <div className="home-cards">
-          <div className="card">
-            <h3>Dados</h3>
-            <p>Decisões baseadas em informação real.</p>
-          </div>
+          <div className="home-buttons">
+            <button onClick={() => navigate("/vagas")}>
+              Ver Vagas
+            </button>
 
-          <div className="card">
-            <h3>Agilidade</h3>
-            <p>Processos rápidos e eficientes.</p>
-          </div>
-
-          <div className="card">
-            <h3>Controle</h3>
-            <p>Você no comando de tudo.</p>
+            <button
+              className="secondary"
+              onClick={() => navigate("/cadastro")}
+            >
+              Criar Conta
+            </button>
           </div>
         </div>
-      </div>
 
+        {/* Lado direito */}
+        <div className="home-right">
+          <img
+            src="/assets/illustration.png"
+            alt="Ilustração"
+          />
+        </div>
+
+      </div>
     </div>
   );
 }
