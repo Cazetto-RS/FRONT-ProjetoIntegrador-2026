@@ -1,20 +1,63 @@
-/* src/index.css */
+/* =========================================================
+   GOOGLE FONT
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================================================
+   RESET GLOBAL
+========================================================= */
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Garante que padding não aumente o tamanho dos elementos */
+  box-sizing: border-box;
 }
 
-html, body, #root {
-  height: 100%;
+/* =========================================================
+   ROOT / HTML / BODY
+========================================================= */
+
+html {
   width: 100%;
-  
-  font-family: 'Arial', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100%;
+  scroll-behavior: smooth;
 }
 
-/* Cores para personalização global */
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  font-family: 'Inter', sans-serif;
+
+  background: #f8fafc;
+
+  color: #111827;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
 :root {
-    /* Cores principais que sempre devem ser utilizadas */
+
+  /* =====================================================
+     PRIMARY COLORS
+  ===================================================== */
+
   --blue-primary-color: #45AAFB;
   --blue-secondary-color: #245E8C;
   --blue-tertiary-color: #173E5E;
@@ -23,33 +66,139 @@ html, body, #root {
   --pink-secondary-color: #AC1D58;
   --pink-tertiary-color: #640B2F;
 
-  --light-black-color: #2E2E2E; 
+  /* =====================================================
+     DARK COLORS
+  ===================================================== */
+
+  --light-black-color: #2E2E2E;
   --medium-black-color: #10131A;
   --dark-black-color: #0B0D12;
 
-  --light-white-color: #F0F2F5;
-  --medium-white-color: #e0e0e0;
-  --dark-white-color: rgb(158, 158, 158);
+  /* =====================================================
+     LIGHT COLORS
+  ===================================================== */
 
-    /* Cores de aviso, alerta, sucesso, etc */
-  --red-color: #be0717;
-  --black-red-color: #7e0101;
-  --transparent-red-color: #be071650;
+  --light-white-color: #F8FAFC;
+  --medium-white-color: #E5E7EB;
+  --dark-white-color: #9CA3AF;
 
-  --green-color: #4abe07;
-  --black-green-color: #2a7001;
-  --transparent-green-color: #4abe0750;
+  /* =====================================================
+     STATUS COLORS
+  ===================================================== */
 
-  --yellow-color: #e7ab07;
-  --black-yellow-color: #997103;
-  --transparent-yellow-color: #e7ab0750;
+  --red-color: #DC2626;
+  --black-red-color: #991B1B;
+  --transparent-red-color: rgba(220, 38, 38, 0.15);
 
-  /* Cores de texto */
-  --light-black-text: #2E2E2E; 
-  --medium-black-text: #10131A;
-  --dark-black-text: #0B0D12;
+  --green-color: #16A34A;
+  --black-green-color: #166534;
+  --transparent-green-color: rgba(22, 163, 74, 0.15);
 
-  --light-white-text: #F5F5F5;
-  --medium-white-text: #9E9E9E;
-  --dark-white-text: #504F4F;
+  --yellow-color: #EAB308;
+  --black-yellow-color: #A16207;
+  --transparent-yellow-color: rgba(234, 179, 8, 0.15);
+
+  /* =====================================================
+     TEXT COLORS
+  ===================================================== */
+
+  --light-black-text: #374151;
+  --medium-black-text: #1F2937;
+  --dark-black-text: #111827;
+
+  --light-white-text: #FFFFFF;
+  --medium-white-text: #D1D5DB;
+  --dark-white-text: #6B7280;
+
+  /* =====================================================
+     UI COLORS
+  ===================================================== */
+
+  --background-color: #F8FAFC;
+  --card-background: rgba(255,255,255,0.8);
+
+  --border-color: rgba(0,0,0,0.06);
+
+  --shadow-sm:
+    0 2px 10px rgba(0,0,0,0.04);
+
+  --shadow-md:
+    0 10px 30px rgba(0,0,0,0.06);
+
+  --shadow-lg:
+    0 20px 50px rgba(0,0,0,0.08);
+
+  --transition:
+    all 0.3s ease;
+}
+
+/* =========================================================
+   GLOBAL ELEMENTS
+========================================================= */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  html {
+    font-size: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  html {
+    font-size: 90%;
+  }
 }

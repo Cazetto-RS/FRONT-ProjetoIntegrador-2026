@@ -1,24 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --bg-primary: #07111f;
-  --bg-secondary: #0d1726;
-  --bg-third: #101c2e;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #eef4ff;
+  --bg-third: #ffffff;
 
   --blue-primary: #2563eb;
   --blue-secondary: #3b82f6;
 
   --purple-primary: #8b5cf6;
 
-  --text-primary: #ffffff;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
 
-  --glass-bg: rgba(255,255,255,0.05);
-  --glass-border: rgba(255,255,255,0.08);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(15, 23, 42, 0.08);
+
+  --card-shadow:
+    0 10px 35px rgba(15, 23, 42, 0.08);
 
   --transition: all 0.3s ease;
 }
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
   margin: 0;
@@ -30,7 +37,9 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-/* CONTAINER */
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .sobre-container {
   position: relative;
@@ -44,7 +53,7 @@ body {
     linear-gradient(
       135deg,
       var(--bg-primary) 0%,
-      var(--bg-secondary) 35%,
+      var(--bg-secondary) 45%,
       var(--bg-third) 100%
     );
 
@@ -53,10 +62,38 @@ body {
     24px
     100px;
 
-  color: white;
+  color: var(--text-primary);
 }
 
-/* BLUR */
+/* =========================================================
+   GRID BACKGROUND
+========================================================= */
+
+.sobre-container::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(37,99,235,0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(37,99,235,0.04) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   BLURS
+========================================================= */
 
 .sobre-blur {
   position: absolute;
@@ -65,14 +102,16 @@ body {
 
   filter: blur(120px);
 
-  opacity: 0.3;
+  opacity: 0.2;
+
+  pointer-events: none;
 }
 
 .blur-left {
   width: 350px;
   height: 350px;
 
-  background: #3b82f6;
+  background: #60a5fa;
 
   top: -120px;
   left: -120px;
@@ -82,13 +121,15 @@ body {
   width: 320px;
   height: 320px;
 
-  background: #8b5cf6;
+  background: #c084fc;
 
   bottom: -120px;
   right: -120px;
 }
 
-/* HERO */
+/* =========================================================
+   HERO
+========================================================= */
 
 .sobre-hero {
   position: relative;
@@ -97,7 +138,7 @@ body {
   width: 100%;
   max-width: 950px;
 
-  margin: 0 auto 80px;
+  margin: 0 auto 90px;
 
   text-align: center;
 }
@@ -109,16 +150,18 @@ body {
 
   border-radius: 999px;
 
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.8);
 
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(37,99,235,0.1);
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 
-  color: #93c5fd;
+  color: var(--blue-primary);
 
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
+
+  box-shadow: var(--card-shadow);
 
   margin-bottom: 28px;
 }
@@ -133,13 +176,15 @@ body {
   font-weight: 900;
 
   margin-bottom: 28px;
+
+  color: var(--text-primary);
 }
 
 .sobre-hero h1 span {
   color: var(--blue-secondary);
 
   text-shadow:
-    0 0 15px rgba(59,130,246,0.6);
+    0 0 18px rgba(59,130,246,0.25);
 }
 
 .sobre-hero p {
@@ -154,7 +199,9 @@ body {
   margin: auto;
 }
 
-/* STATS */
+/* =========================================================
+   STATS
+========================================================= */
 
 .sobre-stats {
   position: relative;
@@ -163,7 +210,7 @@ body {
   width: 100%;
   max-width: 1200px;
 
-  margin: 0 auto 70px;
+  margin: 0 auto 80px;
 
   display: grid;
 
@@ -174,15 +221,17 @@ body {
 }
 
 .stat-card {
-  padding: 30px;
+  padding: 32px;
 
-  border-radius: 28px;
+  border-radius: 30px;
 
   background: var(--glass-bg);
 
   border: 1px solid var(--glass-border);
 
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(18px);
+
+  box-shadow: var(--card-shadow);
 
   transition: var(--transition);
 
@@ -194,24 +243,30 @@ body {
     translateY(-8px);
 
   border-color:
-    rgba(59,130,246,0.3);
+    rgba(59,130,246,0.2);
 
   box-shadow:
-    0 25px 45px rgba(0,0,0,0.25);
+    0 20px 45px rgba(37,99,235,0.12);
 }
 
 .stat-card h2 {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 900;
 
   margin-bottom: 10px;
+
+  color: var(--text-primary);
 }
 
 .stat-card span {
   color: var(--text-muted);
+
+  font-size: 1rem;
 }
 
-/* CARDS */
+/* =========================================================
+   CARDS
+========================================================= */
 
 .sobre-cards {
   position: relative;
@@ -233,19 +288,19 @@ body {
 .sobre-card {
   position: relative;
 
-  padding: 35px;
+  padding: 38px;
 
-  border-radius: 30px;
+  border-radius: 32px;
 
-  background:
-    rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.75);
 
-  border:
-    1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(15,23,42,0.06);
 
   backdrop-filter: blur(18px);
 
   overflow: hidden;
+
+  box-shadow: var(--card-shadow);
 
   transition: var(--transition);
 }
@@ -256,7 +311,7 @@ body {
   position: absolute;
 
   width: 100%;
-  height: 2px;
+  height: 3px;
 
   top: 0;
   left: 0;
@@ -264,9 +319,8 @@ body {
   background:
     linear-gradient(
       90deg,
-      transparent,
-      var(--blue-secondary),
-      transparent
+      var(--blue-primary),
+      var(--purple-primary)
     );
 }
 
@@ -274,18 +328,15 @@ body {
   transform:
     translateY(-10px);
 
-  border-color:
-    rgba(59,130,246,0.3);
-
   box-shadow:
-    0 25px 45px rgba(0,0,0,0.25);
+    0 25px 50px rgba(37,99,235,0.14);
 }
 
 .card-icon {
-  width: 70px;
-  height: 70px;
+  width: 72px;
+  height: 72px;
 
-  border-radius: 20px;
+  border-radius: 22px;
 
   display: flex;
   align-items: center;
@@ -298,25 +349,36 @@ body {
       var(--purple-primary)
     );
 
+  color: white;
+
   font-size: 2rem;
 
   margin-bottom: 24px;
+
+  box-shadow:
+    0 10px 25px rgba(37,99,235,0.25);
 }
 
 .sobre-card h2 {
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 800;
 
   margin-bottom: 16px;
+
+  color: var(--text-primary);
 }
 
 .sobre-card p {
   color: var(--text-secondary);
 
-  line-height: 1.8;
+  line-height: 1.9;
+
+  font-size: 1rem;
 }
 
-/* EXTRA */
+/* =========================================================
+   EXTRA SECTION
+========================================================= */
 
 .sobre-extra {
   position: relative;
@@ -329,19 +391,26 @@ body {
 }
 
 .extra-content {
-  padding: 50px;
+  padding: 60px;
 
-  border-radius: 35px;
+  border-radius: 38px;
 
   background:
-    rgba(255,255,255,0.05);
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.85),
+      rgba(255,255,255,0.65)
+    );
 
   border:
-    1px solid rgba(255,255,255,0.08);
+    1px solid rgba(15,23,42,0.06);
 
   backdrop-filter: blur(20px);
 
   text-align: center;
+
+  box-shadow:
+    0 20px 45px rgba(15,23,42,0.08);
 }
 
 .extra-badge {
@@ -354,10 +423,10 @@ body {
   background:
     rgba(59,130,246,0.12);
 
-  color: #93c5fd;
+  color: var(--blue-primary);
 
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
 
   margin-bottom: 24px;
 }
@@ -372,6 +441,8 @@ body {
   font-weight: 900;
 
   margin-bottom: 24px;
+
+  color: var(--text-primary);
 }
 
 .extra-content h2 span {
@@ -390,7 +461,20 @@ body {
   font-size: 1.05rem;
 }
 
-/* RESPONSIVE */
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+
+  .sobre-hero h1 {
+    letter-spacing: -3px;
+  }
+
+  .sobre-cards {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width: 768px) {
 
@@ -407,6 +491,43 @@ body {
   }
 
   .extra-content {
-    padding: 35px 24px;
+    padding:
+      40px
+      24px;
+  }
+
+  .sobre-card {
+    padding: 30px;
+  }
+
+  .stat-card {
+    padding: 28px;
   }
 }
+
+@media (max-width: 480px) {
+
+  .sobre-hero h1 {
+    font-size:
+      clamp(2.5rem, 13vw, 4rem);
+
+    line-height: 1;
+  }
+
+  .sobre-hero p,
+  .extra-content p {
+    font-size: 0.95rem;
+  }
+
+  .sobre-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .stat-card h2 {
+    font-size: 2rem;
+  }
+
+  .extra-content {
+    border-radius: 28px;
+  }
+} 

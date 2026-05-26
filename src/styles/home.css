@@ -5,34 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 /* =========================================================
-   ROOT
-========================================================= */
-
-:root {
-  --bg-primary: #07111f;
-  --bg-secondary: #0d1726;
-  --bg-third: #101c2e;
-
-  --blue-primary: #2563eb;
-  --blue-secondary: #3b82f6;
-
-  --purple-primary: #8b5cf6;
-
-  --text-primary: #ffffff;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.08);
-
-  --shadow-primary:
-    0 10px 30px rgba(37, 99, 235, 0.25);
-
-  --transition:
-    all 0.3s ease;
-}
-
-/* =========================================================
    RESET
 ========================================================= */
 
@@ -42,119 +14,127 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Inter', sans-serif;
 
   background:
     linear-gradient(
       135deg,
-      var(--bg-primary) 0%,
-      var(--bg-secondary) 35%,
-      var(--bg-third) 100%
+      #f5f7ff 0%,
+      #ffffff 50%,
+      #eef2ff 100%
     );
 
-  color: var(--text-primary);
+  color: #111827;
 
   overflow-x: hidden;
 }
 
+img {
+  width: 100%;
+  display: block;
+}
+
 /* =========================================================
-   HOME PAGE
+   HOME CONTAINER
 ========================================================= */
 
 .home-container {
+
   position: relative;
 
   width: 100%;
+
   min-height: 100vh;
 
-  overflow-x: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 
   padding:
     140px
     24px
-    120px;
+    100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* =========================================================
-   BACKGROUND EFFECTS
-========================================================= */
-
-.bg-blur {
-  position: absolute;
-
-  border-radius: 50%;
-
-  filter: blur(120px);
-
-  opacity: 0.25;
-
-  z-index: 0;
-}
-
-.blur-1 {
-  width: 400px;
-  height: 400px;
-
-  background: var(--blue-secondary);
-
-  top: -120px;
-  left: -120px;
-
-  animation: pulse 6s infinite ease-in-out;
-}
-
-.blur-2 {
-  width: 350px;
-  height: 350px;
-
-  background: var(--purple-primary);
-
-  bottom: -120px;
-  right: -120px;
-
-  animation: pulse 7s infinite ease-in-out;
-}
-
-/* =========================================================
-   GRID OVERLAY
+   GRID BACKGROUND
 ========================================================= */
 
 .home-container::before {
+
   content: "";
 
   position: absolute;
 
-  width: 100%;
-  height: 100%;
+  inset: 0;
 
   background-image:
     linear-gradient(
-      rgba(255,255,255,0.03) 1px,
+      rgba(0,0,0,0.03) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(255,255,255,0.03) 1px,
+      rgba(0,0,0,0.03) 1px,
       transparent 1px
     );
 
   background-size: 60px 60px;
 
   z-index: 0;
-
-  opacity: 0.4;
 }
 
 /* =========================================================
-   MAIN CONTENT
+   BLURS
+========================================================= */
+
+.bg-blur {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  opacity: 0.2;
+}
+
+.blur-1 {
+
+  width: 350px;
+  height: 350px;
+
+  background: #60a5fa;
+
+  top: -120px;
+  left: -120px;
+}
+
+.blur-2 {
+
+  width: 300px;
+  height: 300px;
+
+  background: #a78bfa;
+
+  bottom: -120px;
+  right: -120px;
+}
+
+/* =========================================================
+   CONTENT
 ========================================================= */
 
 .home-content {
+
   position: relative;
   z-index: 2;
 
@@ -165,47 +145,49 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  gap: 80px;
+  gap: 70px;
 }
 
 /* =========================================================
-   LEFT SIDE
+   LEFT
 ========================================================= */
 
 .home-left {
+
   flex: 1;
+
+  min-width: 0;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* =========================================================
-   BADGE
-========================================================= */
-
 .home-badge {
+
   width: fit-content;
 
-  padding: 12px 22px;
-
-  margin-bottom: 28px;
+  padding:
+    12px
+    20px;
 
   border-radius: 999px;
 
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.8);
 
-  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,0,0,0.06);
 
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
 
-  color: #93c5fd;
+  color: #2563eb;
 
   font-size: 0.9rem;
   font-weight: 600;
 
+  margin-bottom: 30px;
+
   box-shadow:
-    0 4px 25px rgba(0,0,0,0.2);
+    0 8px 30px rgba(0,0,0,0.06);
 }
 
 /* =========================================================
@@ -213,7 +195,9 @@ body {
 ========================================================= */
 
 .home-left h1 {
-  font-size: clamp(3.5rem, 7vw, 7rem);
+
+  font-size:
+    clamp(3rem, 7vw, 7rem);
 
   line-height: 0.92;
 
@@ -221,33 +205,34 @@ body {
 
   font-weight: 900;
 
-  margin-bottom: 28px;
+  color: #111827;
 
-  text-transform: uppercase;
+  margin-bottom: 30px;
 }
 
 .home-left h1 span {
-  color: var(--blue-secondary);
+
+  color: #2563eb;
 
   text-shadow:
-    0 0 15px rgba(59,130,246,0.8),
-    0 0 35px rgba(59,130,246,0.4);
+    0 0 25px rgba(37,99,235,0.3);
 }
 
 /* =========================================================
-   DESCRIPTION
+   TEXT
 ========================================================= */
 
 .home-left p {
+
   max-width: 620px;
 
-  color: var(--text-secondary);
-
-  font-size: 1.1rem;
+  font-size: 1.08rem;
 
   line-height: 1.9;
 
-  margin-bottom: 45px;
+  color: #4b5563;
+
+  margin-bottom: 40px;
 }
 
 /* =========================================================
@@ -255,43 +240,40 @@ body {
 ========================================================= */
 
 .home-buttons {
-  display: flex;
-  align-items: center;
 
+  display: flex;
   gap: 18px;
 
   flex-wrap: wrap;
 
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .home-buttons button {
+
   border: none;
   outline: none;
 
   cursor: pointer;
 
-  transition: var(--transition);
+  transition: 0.3s ease;
 
   font-family: inherit;
 }
 
-/* PRIMARY */
-
 .primary-btn {
-  position: relative;
 
-  overflow: hidden;
-
-  padding: 18px 34px;
+  padding:
+    18px
+    34px;
 
   border-radius: 16px;
 
   background:
     linear-gradient(
       135deg,
-      var(--blue-primary),
-      var(--blue-secondary)
+      #2563eb,
+      #3b82f6
     );
 
   color: white;
@@ -299,42 +281,41 @@ body {
   font-size: 1rem;
   font-weight: 700;
 
-  box-shadow: var(--shadow-primary);
+  box-shadow:
+    0 15px 35px rgba(37,99,235,0.25);
 }
 
 .primary-btn:hover {
-  transform:
-    translateY(-4px)
-    scale(1.02);
 
-  box-shadow:
-    0 20px 40px rgba(37,99,235,0.45);
+  transform:
+    translateY(-4px);
 }
 
-/* SECONDARY */
-
 .secondary-btn {
-  padding: 18px 34px;
+
+  padding:
+    18px
+    34px;
 
   border-radius: 16px;
 
-  background: rgba(255,255,255,0.04);
+  background: white;
 
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(0,0,0,0.06);
 
-  backdrop-filter: blur(10px);
-
-  color: white;
+  color: #111827;
 
   font-size: 1rem;
   font-weight: 600;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
 }
 
 .secondary-btn:hover {
+
   transform:
     translateY(-4px);
-
-  background: rgba(255,255,255,0.08);
 }
 
 /* =========================================================
@@ -342,100 +323,81 @@ body {
 ========================================================= */
 
 .home-stats {
-  display: flex;
-  align-items: center;
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(180px, 1fr));
 
   gap: 20px;
-
-  flex-wrap: wrap;
 }
 
 .stat-card {
-  position: relative;
 
-  min-width: 160px;
-
-  padding: 24px;
+  background:
+    rgba(255,255,255,0.75);
 
   border-radius: 22px;
 
-  background: var(--glass-bg);
+  padding: 26px;
 
-  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
 
-  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0,0,0,0.05);
 
-  transition: var(--transition);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.05);
 
-  overflow: hidden;
-}
-
-.stat-card::before {
-  content: "";
-
-  position: absolute;
-
-  width: 100%;
-  height: 2px;
-
-  top: 0;
-  left: 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      var(--blue-secondary),
-      transparent
-    );
+  transition: 0.3s ease;
 }
 
 .stat-card:hover {
-  transform:
-    translateY(-8px);
 
-  background:
-    rgba(255,255,255,0.08);
+  transform:
+    translateY(-6px);
 }
 
 .stat-card h3 {
+
   font-size: 2rem;
 
-  font-weight: 800;
+  color: #111827;
 
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .stat-card span {
-  color: var(--text-muted);
 
-  font-size: 0.95rem;
+  color: #6b7280;
 }
 
 /* =========================================================
-   RIGHT SIDE
+   RIGHT
 ========================================================= */
 
 .home-right {
+
   flex: 1;
 
+  min-width: 0;
+
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .image-container {
-  position: relative;
 
   width: 100%;
-  max-width: 680px;
+  max-width: 650px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 }
 
 .image-container::before {
+
   content: "";
 
   position: absolute;
@@ -443,57 +405,46 @@ body {
   width: 80%;
   height: 80%;
 
+  top: 50%;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
   background:
     radial-gradient(
       circle,
-      rgba(59,130,246,0.25),
+      rgba(37,99,235,0.18),
       transparent 70%
     );
 
-  z-index: -1;
-
   filter: blur(60px);
+
+  z-index: -1;
 }
 
 .image-container img {
-  width: 100%;
-  height: auto;
-
-  object-fit: contain;
 
   animation:
     floating 5s ease-in-out infinite;
 }
 
 /* =========================================================
-   ANIMATIONS
+   ANIMATION
 ========================================================= */
 
 @keyframes floating {
+
   0% {
     transform: translateY(0px);
   }
 
   50% {
-    transform: translateY(-18px);
+    transform: translateY(-15px);
   }
 
   100% {
     transform: translateY(0px);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.1);
-  }
-
-  100% {
-    transform: scale(1);
   }
 }
 
@@ -501,98 +452,134 @@ body {
    RESPONSIVE
 ========================================================= */
 
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
 
   .home-content {
-    gap: 50px;
-  }
 
-  .home-left h1 {
-    font-size: clamp(3rem, 7vw, 5.5rem);
-  }
-}
-
-@media (max-width: 992px) {
-
-  .home-content {
     flex-direction: column;
 
     text-align: center;
   }
 
   .home-left {
+
     align-items: center;
   }
 
   .home-left p {
-    max-width: 720px;
+
+    max-width: 700px;
   }
 
   .home-buttons {
+
     justify-content: center;
   }
 
   .home-stats {
+
     justify-content: center;
   }
 
   .image-container {
-    max-width: 550px;
+
+    max-width: 520px;
   }
 }
 
 @media (max-width: 768px) {
 
   .home-container {
+
     padding:
       110px
       20px
-      60px;
+      70px;
+  }
+
+  .home-content {
+
+    gap: 50px;
   }
 
   .home-left h1 {
+
     font-size:
-      clamp(2.8rem, 12vw, 4.5rem);
+      clamp(2.5rem, 12vw, 4rem);
 
     letter-spacing: -2px;
   }
 
   .home-left p {
+
     font-size: 1rem;
 
-    line-height: 1.8;
+    line-height: 1.7;
   }
 
   .home-buttons {
+
     width: 100%;
 
     flex-direction: column;
   }
 
   .home-buttons button {
+
     width: 100%;
   }
 
-  .stat-card {
-    width: 100%;
+  .home-stats {
+
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
 
-  .home-badge {
-    font-size: 0.75rem;
-  }
+  .home-container {
 
-  .home-left p {
-    font-size: 0.95rem;
+    padding:
+      100px
+      16px
+      60px;
   }
 
   .home-left h1 {
+
+    font-size:
+      clamp(2rem, 13vw, 3rem);
+
+    line-height: 0.95;
+
     letter-spacing: -1px;
   }
 
+  .home-left p {
+
+    font-size: 0.95rem;
+  }
+
+  .home-badge {
+
+    font-size: 0.72rem;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+
+    padding:
+      16px
+      20px;
+  }
+
+  .stat-card {
+
+    padding: 22px;
+  }
+
   .stat-card h3 {
-    font-size: 1.6rem;
+
+    font-size: 1.5rem;
   }
 }
