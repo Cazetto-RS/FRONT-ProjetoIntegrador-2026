@@ -1,697 +1,395 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* =========================================================
-   ROOT
-========================================================= */
+.vagas-container{
+  position:relative;
+  min-height:100vh;
+  overflow:hidden;
 
-:root {
-
-  --bg-primary: #f8fafc;
-  --bg-secondary: #ffffff;
-  --bg-third: #eef2ff;
-
-  --blue-primary: #2563eb;
-  --blue-secondary: #3b82f6;
-
-  --purple-primary: #8b5cf6;
-
-  --text-primary: #111827;
-  --text-secondary: #4b5563;
-  --text-muted: #6b7280;
-
-  --glass-bg: rgba(255,255,255,0.75);
-  --glass-border: rgba(0,0,0,0.06);
-
-  --shadow-md:
-    0 10px 30px rgba(0,0,0,0.06);
-
-  --shadow-lg:
-    0 20px 50px rgba(0,0,0,0.08);
-
-  --transition: all 0.3s ease;
-}
-
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* =========================================================
-   BODY
-========================================================= */
-
-body {
-  font-family: "Inter", sans-serif;
+  padding:120px 24px 80px;
 
   background:
-    linear-gradient(
-      135deg,
-      var(--bg-primary) 0%,
-      var(--bg-secondary) 50%,
-      var(--bg-third) 100%
-    );
-
-  color: var(--text-primary);
-
-  overflow-x: hidden;
+  linear-gradient(
+    135deg,
+    #f8faff 0%,
+    #ffffff 50%,
+    #f1f5ff 100%
+  );
 }
 
-/* =========================================================
-   CONTAINER
-========================================================= */
+/* GRID */
 
-.vagas-container {
-
-  position: relative;
-
-  width: 100%;
-  min-height: 100vh;
-
-  overflow-x: hidden;
-
-  padding:
-    140px
-    24px
-    100px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f8fafc 0%,
-      #ffffff 50%,
-      #eef2ff 100%
-    );
-}
-
-/* =========================================================
-   GRID BACKGROUND
-========================================================= */
-
-.vagas-container::before {
-
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
+.vagas-container::before{
+  content:"";
+  position:absolute;
+  inset:0;
 
   background-image:
     linear-gradient(
-      rgba(0,0,0,0.03) 1px,
+      rgba(15,23,42,.025) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(0,0,0,0.03) 1px,
+      rgba(15,23,42,.025) 1px,
       transparent 1px
     );
 
-  background-size: 60px 60px;
+  background-size:64px 64px;
 
-  z-index: 0;
+  z-index:0;
 }
 
-/* =========================================================
-   BACKGROUND FX
-========================================================= */
+/* BLURS */
 
-.bg-gradient {
-
-  position: absolute;
-  inset: 0;
-
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(59,130,246,0.10),
-      transparent 35%
-    );
-
-  pointer-events: none;
+.bg-blur{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(140px);
+  opacity:.12;
+  z-index:0;
 }
 
-.bg-blur {
-
-  position: absolute;
-
-  border-radius: 50%;
-
-  filter: blur(120px);
-
-  opacity: 0.2;
+.blur-left{
+  width:350px;
+  height:350px;
+  background:#60a5fa;
+  top:-120px;
+  left:-120px;
 }
 
-.blur-left {
-
-  width: 350px;
-  height: 350px;
-
-  background: #60a5fa;
-
-  top: -100px;
-  left: -100px;
+.blur-right{
+  width:300px;
+  height:300px;
+  background:#a78bfa;
+  right:-100px;
+  bottom:0;
 }
 
-.blur-right {
+/* HERO */
 
-  width: 300px;
-  height: 300px;
+.hero-section{
+  position:relative;
+  z-index:2;
 
-  background: #a78bfa;
+  max-width:850px;
+  margin:auto;
 
-  bottom: -120px;
-  right: -100px;
+  text-align:center;
+
+  margin-bottom:60px;
 }
 
-/* =========================================================
-   HERO
-========================================================= */
+.hero-badge{
+  display:inline-block;
 
-.hero-section {
+  padding:10px 18px;
 
-  position: relative;
-  z-index: 2;
+  border-radius:999px;
 
-  width: 100%;
-  max-width: 900px;
+  background:#eff6ff;
 
-  margin: 0 auto 70px;
+  color:#2563eb;
 
-  text-align: center;
+  border:1px solid #dbeafe;
+
+  font-weight:600;
+
+  margin-bottom:20px;
 }
 
-.hero-badge {
+.hero-section h1{
+  font-size:clamp(2.8rem,5vw,4.5rem);
 
-  display: inline-flex;
+  line-height:1.05;
 
-  padding:
-    12px
-    22px;
+  color:#111827;
 
-  border-radius: 999px;
-
-  background:
-    rgba(255,255,255,0.8);
-
-  border: 1px solid rgba(0,0,0,0.06);
-
-  backdrop-filter: blur(10px);
-
-  color: var(--blue-primary);
-
-  font-size: 0.9rem;
-  font-weight: 600;
-
-  margin-bottom: 28px;
-
-  box-shadow: var(--shadow-md);
+  margin-bottom:20px;
 }
 
-.hero-section h1 {
+.hero-section p{
+  max-width:650px;
 
-  font-size:
-    clamp(3rem, 8vw, 6.5rem);
+  margin:auto;
 
-  line-height: 0.95;
+  color:#6b7280;
 
-  letter-spacing: -4px;
-
-  font-weight: 900;
-
-  color: var(black);
-
-  margin-bottom: 28px;
+  line-height:1.8;
 }
 
-.hero-section h1 span {
+/* INFO */
 
-  color: var(--blue-secondary);
+.info-cards{
+  position:relative;
+  z-index:2;
 
-  text-shadow:
-    0 0 20px rgba(59,130,246,0.25);
-}
+  max-width:1100px;
 
-.hero-section p {
+  margin:0 auto 60px;
 
-  color: var(--text-secondary);
-
-  font-size: 1.1rem;
-
-  line-height: 1.8;
-
-  max-width: 700px;
-
-  margin: auto;
-}
-
-/* =========================================================
-   FILTERS
-========================================================= */
-
-.filters-section {
-
-  position: relative;
-  z-index: 2;
-
-  width: 100%;
-  max-width: 1200px;
-
-  margin: 0 auto 50px;
-
-  display: flex;
-  gap: 20px;
-
-  flex-wrap: wrap;
-}
-
-.search-box,
-.select-box {
-
-  flex: 1;
-  min-width: 250px;
-}
-
-.search-box input,
-.select-box select {
-
-  width: 100%;
-
-  padding:
-    18px
-    22px;
-
-  border-radius: 18px;
-
-  border: 1px solid rgba(0,0,0,0.06);
-
-  background:
-    rgba(255,255,255,0.75);
-
-  backdrop-filter: blur(10px);
-
-  color: var(--text-primary);
-
-  outline: none;
-
-  font-size: 1rem;
-
-  box-shadow: var(--shadow-md);
-
-  transition: var(--transition);
-}
-
-.search-box input::placeholder {
-
-  color: #9ca3af;
-}
-
-.search-box input:focus,
-.select-box select:focus {
-
-  border-color:
-    rgba(59,130,246,0.4);
-
-  box-shadow:
-    0 0 0 4px rgba(59,130,246,0.10);
-}
-
-/* =========================================================
-   GRID
-========================================================= */
-
-.vagas-grid {
-
-  position: relative;
-  z-index: 2;
-
-  width: 100%;
-  max-width: 1200px;
-
-  margin: auto;
-
-  display: grid;
+  display:grid;
 
   grid-template-columns:
-    repeat(auto-fit, minmax(320px, 1fr));
+  repeat(auto-fit,minmax(250px,1fr));
 
-  gap: 28px;
+  gap:20px;
 }
 
-/* =========================================================
-   CARD
-========================================================= */
+.info-card{
+  background:white;
 
-.vaga-card {
+  border-radius:18px;
 
-  position: relative;
+  padding:24px;
 
-  padding: 28px;
+  text-align:center;
 
-  border-radius: 28px;
-
-  background:
-    rgba(255,255,255,0.75);
-
-  border: 1px solid rgba(0,0,0,0.05);
-
-  backdrop-filter: blur(18px);
-
-  overflow: hidden;
-
-  transition: var(--transition);
-
-  box-shadow: var(--shadow-md);
-}
-
-.vaga-card::before {
-
-  content: "";
-
-  position: absolute;
-
-  width: 100%;
-  height: 3px;
-
-  top: 0;
-  left: 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      #2563eb,
-      #8b5cf6
-    );
-}
-
-.vaga-card:hover {
-
-  transform:
-    translateY(-8px);
+  border:1px solid #e5e7eb;
 
   box-shadow:
-    var(--shadow-lg);
+  0 8px 20px rgba(0,0,0,.04);
 }
 
-/* =========================================================
-   TOP
-========================================================= */
-
-.vaga-top {
-
-  display: flex;
-  align-items: center;
-
-  gap: 16px;
-
-  margin-bottom: 22px;
+.info-card h3{
+  font-size:2rem;
+  color:#2563eb;
 }
 
-.empresa-avatar {
-
-  min-width: 60px;
-  height: 60px;
-
-  border-radius: 18px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--blue-primary),
-      var(--purple-primary)
-    );
-
-  color: white;
-
-  font-size: 1.3rem;
-  font-weight: 800;
-
-  box-shadow:
-    0 10px 25px rgba(37,99,235,0.25);
+.info-card span{
+  color:#6b7280;
 }
 
-.vaga-header h2 {
+/* VAGAS */
 
-  font-size: 1.2rem;
-  font-weight: 800;
+.vagas-content{
+  position:relative;
+  z-index:2;
 
-  color: var(--text-primary);
+  max-width:1200px;
 
-  margin-bottom: 6px;
+  margin:auto;
 }
 
-.vaga-header p {
+.vagas-grid{
+  display:grid;
 
-  color: var(--text-muted);
+  grid-template-columns:
+  repeat(auto-fit,minmax(330px,1fr));
+
+  gap:24px;
 }
 
-/* =========================================================
-   TAGS
-========================================================= */
+.vaga-card{
+  background:white;
 
-.vaga-tags {
+  border:1px solid #e5e7eb;
 
-  display: flex;
-  flex-wrap: wrap;
+  border-radius:20px;
 
-  gap: 10px;
+  padding:24px;
 
-  margin-bottom: 22px;
+  transition:.3s;
 }
 
-.vaga-tags span {
-
-  padding:
-    8px
-    14px;
-
-  border-radius: 999px;
-
-  background:
-    rgba(59,130,246,0.10);
-
-  color: var(--blue-primary);
-
-  font-size: 0.85rem;
-  font-weight: 700;
+.vaga-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
 }
 
-/* =========================================================
-   DESCRIPTION
-========================================================= */
+.vaga-top{
+  display:flex;
+  gap:15px;
+  align-items:center;
 
-.vaga-descricao {
-
-  color: var(--text-secondary);
-
-  line-height: 1.8;
-
-  margin-bottom: 30px;
+  margin-bottom:20px;
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
+.empresa-avatar{
+  width:54px;
+  height:54px;
 
-.vaga-footer {
+  border-radius:50%;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background:#2563eb;
 
-  gap: 18px;
+  color:white;
 
-  flex-wrap: wrap;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-weight:700;
 }
 
-.vaga-salario {
-
-  font-size: 1.2rem;
-  font-weight: 800;
-
-  color: var(--text-primary);
+.vaga-top h2{
+  font-size:1.15rem;
+  color:#111827;
 }
 
-.btn-candidatar {
-
-  border: none;
-  outline: none;
-
-  cursor: pointer;
-
-  padding:
-    14px
-    24px;
-
-  border-radius: 14px;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--blue-primary),
-      var(--blue-secondary)
-    );
-
-  color: white;
-
-  font-weight: 700;
-
-  transition: var(--transition);
-
-  box-shadow:
-    0 10px 25px rgba(37,99,235,0.25);
+.vaga-top p{
+  color:#6b7280;
 }
 
-.btn-candidatar:hover {
+.vaga-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
 
-  transform:
-    translateY(-3px);
-
-  box-shadow:
-    0 18px 35px rgba(37,99,235,0.35);
+  margin-bottom:18px;
 }
 
-/* =========================================================
-   LOADING / EMPTY
-========================================================= */
+.vaga-tags span{
+  background:#eff6ff;
 
-.loading-container,
-.empty-state {
+  color:#2563eb;
 
-  position: relative;
-  z-index: 2;
+  padding:8px 12px;
 
-  width: 100%;
-  min-height: 300px;
+  border-radius:999px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  font-size:.85rem;
 
-  text-align: center;
+  font-weight:600;
 }
 
-.loading-container p,
-.empty-state p {
+.vaga-descricao{
+  color:#6b7280;
 
-  color: var(--text-secondary);
+  line-height:1.7;
+
+  margin-bottom:20px;
 }
 
-.loader {
-
-  width: 60px;
-  height: 60px;
-
-  border-radius: 50%;
-
-  border: 4px solid rgba(0,0,0,0.08);
-  border-top: 4px solid var(--blue-secondary);
-
-  animation: spin 1s linear infinite;
-
-  margin-bottom: 20px;
+.vaga-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-@keyframes spin {
+.btn-candidatar{
+  border:none;
 
-  to {
-    transform: rotate(360deg);
+  background:#2563eb;
+
+  color:white;
+
+  padding:12px 20px;
+
+  border-radius:10px;
+
+  cursor:pointer;
+
+  font-weight:600;
+}
+
+/* PROCESSO */
+
+.processo-section{
+  position:relative;
+  z-index:2;
+
+  max-width:1200px;
+
+  margin:90px auto 0;
+}
+
+.processo-section h2{
+  text-align:center;
+
+  margin-bottom:40px;
+
+  font-size:2rem;
+}
+
+.processo-grid{
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+
+  gap:24px;
+}
+
+.processo-card{
+  background:white;
+
+  border-radius:18px;
+
+  padding:28px;
+
+  text-align:center;
+
+  border:1px solid #e5e7eb;
+}
+
+.processo-card span{
+  width:50px;
+  height:50px;
+
+  margin:auto auto 16px;
+
+  border-radius:50%;
+
+  background:#2563eb;
+
+  color:white;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-weight:700;
+}
+
+.processo-card h3{
+  margin-bottom:12px;
+}
+
+.processo-card p{
+  color:#6b7280;
+}
+
+/* LOADING */
+
+.loading-container{
+  text-align:center;
+  padding:80px;
+}
+
+.loader{
+  width:42px;
+  height:42px;
+
+  border:4px solid #dbeafe;
+  border-top:4px solid #2563eb;
+
+  border-radius:50%;
+
+  margin:auto;
+
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
   }
 }
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+@media(max-width:768px){
 
-@media (max-width: 992px) {
-
-  .hero-section h1 {
-
-    letter-spacing: -2px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .vagas-container {
-
-    padding:
-      120px
-      20px
-      80px;
+  .vagas-container{
+    padding:100px 20px 60px;
   }
 
-  .hero-section {
-
-    margin-bottom: 50px;
+  .vaga-footer{
+    flex-direction:column;
+    gap:15px;
+    align-items:flex-start;
   }
 
-  .hero-section p {
-
-    font-size: 1rem;
+  .btn-candidatar{
+    width:100%;
   }
 
-  .vaga-footer {
-
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .btn-candidatar {
-
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .vagas-container {
-
-    padding:
-      110px
-      16px
-      70px;
-  }
-
-  .hero-section h1 {
-
-    font-size:
-      clamp(2.4rem, 12vw, 4rem);
-
-    line-height: 1;
-
-    letter-spacing: -1px;
-  }
-
-  .hero-section p {
-
-    font-size: 0.95rem;
-  }
-
-  .vaga-card {
-
-    padding: 22px;
-  }
-
-  .vaga-top {
-
-    align-items: flex-start;
-  }
-
-  .empresa-avatar {
-
-    min-width: 52px;
-    height: 52px;
-
-    font-size: 1.1rem;
-  }
 }
