@@ -4,7 +4,6 @@ export function Sobre() {
   return (
     <main className="sobre-container">
 
-      {/* BACKGROUND */}
       <div className="sobre-blur blur-left"></div>
       <div className="sobre-blur blur-right"></div>
 
@@ -12,119 +11,128 @@ export function Sobre() {
       <section className="sobre-hero">
 
         <span className="sobre-badge">
-          Plataforma Inteligente de Talentos
+          Sobre a Point Media
         </span>
 
         <h1>
-          CONECTANDO
+          Tecnologia,
           <br />
-          TALENTOS AO
+          criatividade e
           <br />
-          FUTURO DO
-          <span> MERCADO.</span>
+          inovação digital.
         </h1>
 
         <p>
-          Somos uma plataforma moderna focada em aproximar
-          profissionais e empresas através de tecnologia,
-          inovação e oportunidades reais.
+          A Point Media é uma empresa especializada em produção digital,
+          automação, marketing de performance e soluções tecnológicas para
+          grandes marcas do mercado brasileiro.
         </p>
 
       </section>
 
-      {/* STATS */}
-      <section className="sobre-stats">
+      {/* EMPRESA */}
+      <section className="sobre-section">
 
-        <div className="stat-card">
-          <h2>+1.2K</h2>
-          <span>Talentos Cadastrados</span>
+        <div className="section-header">
+          <span>Quem Somos</span>
+          <h2>A empresa que inspirou este projeto</h2>
         </div>
 
-        <div className="stat-card">
-          <h2>+350</h2>
-          <span>Empresas Parceiras</span>
-        </div>
+        <div className="sobre-text">
+          <p>
+            Desde sua atuação no mercado digital, a Point Media desenvolve
+            soluções focadas em performance, automação de processos,
+            produção de campanhas digitais e gestão de mídia.
+          </p>
 
-        <div className="stat-card">
-          <h2>+890</h2>
-          <span>Contratações</span>
+          <p>
+            Seu trabalho atende empresas de grande porte e projetos nacionais,
+            utilizando tecnologia para aumentar produtividade, reduzir prazos
+            de entrega e otimizar operações digitais.
+          </p>
         </div>
 
       </section>
 
-      {/* CARDS */}
+      {/* ÁREAS */}
       <section className="sobre-cards">
 
         <article className="sobre-card">
-
-          <div className="card-icon">
-            🚀
-          </div>
-
-          <h2>Missão</h2>
-
+          <div className="card-icon">🎨</div>
+          <h3>Produção Digital</h3>
           <p>
-            Transformar a forma como talentos e empresas se conectam,
-            criando oportunidades através de tecnologia e inovação.
+            Criação de banners, vídeos, peças HTML5 e campanhas digitais.
           </p>
-
         </article>
 
         <article className="sobre-card">
-
-          <div className="card-icon">
-            💡
-          </div>
-
-          <h2>Visão</h2>
-
+          <div className="card-icon">⚙️</div>
+          <h3>Automação</h3>
           <p>
-            Ser referência em recrutamento digital moderno,
-            oferecendo experiências inteligentes e eficientes.
+            Processos inteligentes que reduzem tempo de produção e aumentam eficiência.
           </p>
-
         </article>
 
         <article className="sobre-card">
-
-          <div className="card-icon">
-            🔥
-          </div>
-
-          <h2>Valores</h2>
-
+          <div className="card-icon">📈</div>
+          <h3>Performance</h3>
           <p>
-            Transparência, inovação, excelência e foco total
-            na evolução profissional dos usuários.
+            Planejamento, acompanhamento e otimização de campanhas digitais.
           </p>
+        </article>
 
+        <article className="sobre-card">
+          <div className="card-icon">💻</div>
+          <h3>Tecnologia</h3>
+          <p>
+            Desenvolvimento de soluções digitais e ferramentas internas.
+          </p>
         </article>
 
       </section>
 
-      {/* EXTRA SECTION */}
-      <section className="sobre-extra">
+      {/* CLIENTES */}
+      <section className="sobre-section">
 
-        <div className="extra-content">
+        <div className="section-header">
+          <span>Grandes Marcas</span>
+          <h2>Clientes atendidos pela Point Media</h2>
+        </div>
 
-          <span className="extra-badge">
-            Tecnologia & Inovação
-          </span>
+        <div className="clientes-grid">
 
-          <h2>
-            EXPERIÊNCIA
-            <br />
-            MODERNA E
-            <span> INTELIGENTE.</span>
-          </h2>
-
-          <p>
-            Desenvolvemos uma plataforma moderna,
-            responsiva e intuitiva para conectar
-            empresas aos melhores talentos do mercado.
-          </p>
+          <div className="cliente">PicPay</div>
+          <div className="cliente">C6 Bank</div>
+          <div className="cliente">Serasa</div>
+          <div className="cliente">Havaianas</div>
+          <div className="cliente">C&A</div>
+          <div className="cliente">Track & Field</div>
+          <div className="cliente">Veloe</div>
 
         </div>
+
+      </section>
+
+      {/* PROJETO */}
+      <section className="sobre-projeto">
+
+        <span className="projeto-badge">
+          Projeto Acadêmico
+        </span>
+
+        <h2>Por que criamos a EZ.JOB?</h2>
+
+        <p>
+          Este projeto foi desenvolvido como uma solução para auxiliar
+          processos de recrutamento e seleção, permitindo o cadastro,
+          organização e busca inteligente de talentos.
+        </p>
+
+        <p>
+          Inspirado nas necessidades reais observadas no mercado digital,
+          o sistema busca aproximar profissionais e empresas através de
+          uma experiência moderna, intuitiva e eficiente.
+        </p>
 
       </section>
 
