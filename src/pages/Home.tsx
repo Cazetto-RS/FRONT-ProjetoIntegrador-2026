@@ -12,12 +12,16 @@ export function Home() {
       <div className="bg-blur blur-1"></div>
       <div className="bg-blur blur-2"></div>
 
+      <div className="floating-dot dot1"></div>
+      <div className="floating-dot dot2"></div>
+      <div className="floating-dot dot3"></div>
+
       <section className="home-content">
 
         <div className="home-left">
 
           <span className="home-badge">
-            Plataforma de Talentos e Oportunidades
+            ✨ Banco de Talentos Inteligente
           </span>
 
           <h1>
@@ -25,7 +29,9 @@ export function Home() {
             <br />
             que combinam com
             <br />
-            o seu talento.
+            <span className="typing-text">
+              o seu talento.
+            </span>
           </h1>
 
           <p>
@@ -57,11 +63,13 @@ export function Home() {
         <div className="home-right">
 
           <div className="image-container">
+
             <img
               src={illustration}
               alt="EZ.JOB"
               className="hero-image"
             />
+
           </div>
 
         </div>

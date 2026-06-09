@@ -38,10 +38,11 @@ img{
   justify-content:center;
   align-items:center;
 
-  padding:90px 24px 40px;
+  padding:40px 40px 40px 120px;
 
   overflow:hidden;
 }
+
 
 .home-container::before{
   content:"";
@@ -334,5 +335,11 @@ img{
 
   .home-badge{
     font-size:.75rem;
+  }
+}
+@media(max-width:900px){
+
+  .home-container{
+    padding:90px 20px 40px;
   }
 }
